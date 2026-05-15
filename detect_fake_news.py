@@ -2,13 +2,11 @@
 """
 detect.py  –  CLI fake news detection with interpretability info
 ================================================================
-Project: Fake News Detection – Comparative Analysis
-Author : Fareeha Imran | CSC-25S-014 | SMIU
-
-Changes from original:
-  - Added --explain flag for LIME word-level explanation in the terminal
-  - Shows interpretability rating alongside prediction
-  - Supports listing stored comparison metrics via --show-metrics
+Features:
+- Fake/real news prediction
+- Probability scoring
+- LIME-based word explanations
+- Comparative metrics display
 """
 
 from __future__ import annotations
@@ -43,7 +41,7 @@ def get_metrics_path(pipeline_path: str | None) -> Path | None:
 # ─── Main ─────────────────────────────────────────────────────────────────────
 def main() -> None:
     ap = argparse.ArgumentParser(
-        description="Fake News Detector CLI  |  Fareeha Imran, CSC-25S-014, SMIU"
+        description="Fake News Detector CLI "
     )
     ap.add_argument("--pipeline",     help="Path to pipeline.joblib (preferred).")
     ap.add_argument("--model",        help="Path to model.joblib.")
