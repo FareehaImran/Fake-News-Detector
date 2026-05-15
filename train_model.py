@@ -2,26 +2,11 @@
 """
 train_model.py  –  Fake News Detection: Comparative Analysis
 =============================================================
-Project Proposal: "Fake News Detection: A Comparative Review of Detection
-Approaches from Traditional Machine Learning to Large Language Models"
-Author  : Fareeha Imran  |  CSC-25S-014
-Course  : Artificial Intelligence, 3rd Semester
-Supervisor: Sir Haque Nawaz Lashari
-University: Sindh Madarssatul Islam University
-
-What this script does (aligned with proposal objectives):
-  1. Loads True.csv + Fake.csv datasets
-  2. Preprocesses text (lowercase, URL removal, non-ASCII strip)
-  3. Extracts TF-IDF features (1–3 grams)
-  4. Trains FOUR classifiers for comparison:
-       • Logistic Regression      (traditional ML – interpretable)
-       • Support Vector Machine   (traditional ML – high accuracy)
-       • Passive Aggressive       (traditional ML – online learning)
-       • Random Forest            (ensemble – baseline from original code)
-  5. Evaluates each on: Accuracy, Precision, Recall, F1, ROC-AUC
-  6. Generates LIME explanations for interpretability (proposal Section 7)
-  7. Measures training time (computational efficiency comparison)
-  8. Saves all artifacts, charts, and a comparative metrics JSON
+This script:
+- Trains multiple ML classifiers on fake news dataset
+- Evaluates performance using standard metrics
+- Generates explainability outputs using LIME
+- Saves trained models and evaluation results
 """
 
 from __future__ import annotations
@@ -54,7 +39,7 @@ from sklearn.metrics         import (
     average_precision_score,
 )
 
-# LIME for explainability (proposal mentions LIME and MAPX)
+# LIME for explainability 
 from lime.lime_text import LimeTextExplainer
 
 # ─── Constants ───────────────────────────────────────────────────────────────
@@ -194,7 +179,7 @@ def generate_lime_explanations(
 # ─── Main ─────────────────────────────────────────────────────────────────────
 def main() -> None:
     ap = argparse.ArgumentParser(
-        description="Fake News Detection – Comparative ML Analysis (Fareeha Imran, CSC-25S-014)"
+        description="Fake News Detection – Comparative ML Analysis"
     )
     ap.add_argument("--real",     required=True, help="Path to True.csv")
     ap.add_argument("--fake",     required=True, help="Path to Fake.csv")
@@ -212,7 +197,7 @@ def main() -> None:
 
     print("=" * 65)
     print("  Fake News Detection – Comparative Analysis")
-    print("  Fareeha Imran | CSC-25S-014 | SMIU")
+    print("  Comparative Machine Learning Training Pipeline")
     print("=" * 65)
 
     # ── 1. Load data ──────────────────────────────────────────────────
