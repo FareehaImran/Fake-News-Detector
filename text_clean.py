@@ -2,17 +2,13 @@
 """
 text_clean.py  –  Lightweight text normalization for fake news detector.
 ========================================================================
-Project: Fake News Detection – Comparative Analysis
-Author : Fareeha Imran | CSC-25S-014 | SMIU
-
 Default behavior:
-  - Lowercase
-  - Remove URLs and emails
-  - Strip non-ASCII characters
-  - Collapse multiple whitespace into a single space
+- Lowercase conversion
+- URL and email removal
+- Non-ASCII character filtering
+- Whitespace normalization
 
-NOTE: This file is unchanged from the original GitHub source.
-The normalization steps align with the preprocessing described in the proposal.
+This module provides preprocessing utilities for ML-based text classification.
 """
 
 from __future__ import annotations
