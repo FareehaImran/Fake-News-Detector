@@ -2,15 +2,12 @@
 """
 app.py  –  Fake News & Misinformation Detector
 ===============================================
-Project: Fake News Detection – Comparative Analysis
-Author : Fareeha Imran | CSC-25S-014 | SMIU
-Course : Artificial Intelligence, 3rd Semester
-
-Changes from original:
-  - Shows comparative metrics for ALL trained classifiers (proposal objective 3)
-  - Displays LIME explanation chart for best classifier prediction
-  - Shows interpretability level and computational efficiency info per classifier
-  - Loads metrics.json for the comparison dashboard tab
+Features:
+- Fake/real news classification
+- Probability scoring with adjustable threshold
+- Comparative classifier analysis
+- LIME explainability visualizations
+- Interpretability and efficiency insights
 """
 
 from __future__ import annotations
@@ -61,7 +58,7 @@ def load_artifacts(pipeline_path, model_path, vectorizer_path):
     return None, None, None
 
 
-# ─── Interpretability metadata (proposal Section 7 evaluation criteria) ───────
+# ─── Interpretability metadata  ───────
 CLASSIFIER_INFO = {
     "Logistic Regression": {
         "interpretability": "⭐⭐⭐⭐⭐ Very High",
@@ -127,12 +124,7 @@ def main():
             f"vectorizer: **{'✅' if vectorizer_ok else '❌'}**"
         )
         st.markdown("---")
-        st.markdown(
-            "**Project:** Fake News Detection: Comparative Review  \n"
-            "**Author:** Fareeha Imran (CSC-25S-014)  \n"
-            "**Course:** Artificial Intelligence  \n"
-            "**University:** SMIU"
-        )
+        
 
     # ── Load model ────────────────────────────────────────────────────
     pipe, clf, vec = load_artifacts(pipeline_path, model_path, vectorizer_path)
@@ -159,8 +151,8 @@ def main():
     with tab1:
         st.title("📰 Fake News & Misinformation Detector")
         st.caption(
-            "TF-IDF feature extraction + comparative ML classifiers  |  "
-            "Fareeha Imran, CSC-25S-014, SMIU"
+            "TF-IDF feature extraction with comparative machine learning classifiers  "
+            
         )
 
         txt = st.text_area(
@@ -220,7 +212,7 @@ def main():
             )
 
     # ══════════════════════════════════════════════════════════════════
-    # TAB 2: Classifier Comparison (proposal objective 3)
+    # TAB 2: Classifier Comparison 
     # ══════════════════════════════════════════════════════════════════
     with tab2:
         st.title("📊 Comparative Analysis – All Classifiers")
@@ -292,14 +284,14 @@ def main():
                     st.write(info['description'])
 
     # ══════════════════════════════════════════════════════════════════
-    # TAB 3: LIME Explanations (proposal mentions LIME & MAPX)
+    # TAB 3: LIME Explanations 
     # ══════════════════════════════════════════════════════════════════
     with tab3:
         st.title("🧠 LIME Explainability")
         st.caption(
             "LIME (Local Interpretable Model-Agnostic Explanations) shows "
             "which words most influenced each prediction – addressing the "
-            "interpretability objective from the project proposal."
+            ""model interpretability analysis.""
         )
 
         st.info(
