@@ -109,8 +109,8 @@ predictions by perturbing input text and observing prediction changes.
 
 ## 📊 Dataset
 **ISOT Fake News Dataset**
-- ~21,417 real news articles from Reuters
-- ~23,481 fake news articles from unreliable sources
+- ~21,000 real news articles from Reuters
+- ~23,000 fake news articles from unreliable sources
 - 44,000+ labeled articles total
 
 ---
